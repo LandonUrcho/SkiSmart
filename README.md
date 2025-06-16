@@ -1,51 +1,18 @@
-# React + TypeScript + Vite
-
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
-
-Currently, two official plugins are available:
-
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
-
-## Expanding the ESLint configuration
-
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
-
-- Configure the top-level `parserOptions` property like this:
-
-```js
-export default tseslint.config({
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
-```
-
-- Replace `tseslint.configs.recommended` to `tseslint.configs.recommendedTypeChecked` or `tseslint.configs.strictTypeChecked`
-- Optionally add `...tseslint.configs.stylisticTypeChecked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and update the config:
-
-```js
-// eslint.config.js
-import react from 'eslint-plugin-react'
-
-export default tseslint.config({
-  // Set the react version
-  settings: { react: { version: '18.3' } },
-  plugins: {
-    // Add the react plugin
-    react,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended rules
-    ...react.configs.recommended.rules,
-    ...react.configs['jsx-runtime'].rules,
-  },
-})
-```
 # SkiSmart
+
+SkiSmart is a modern web application that helps skiers explore ski resorts, view real-time and historical snow/weather data, and manage their ski experiences. Built with React, TypeScript, and Vite on the frontend, and Go on the backend, SkiSmart integrates data from sources like Open-Meteo and the Microsoft Planetary Computer to provide accurate, interactive information for ski enthusiasts.
+
+## Features
+
+- **Resort Search & Info:** Find ski resorts and view detailed information.
+- **Weather & Snow Data:** Access up-to-date and historical weather and snow conditions.
+- **Interactive Maps:** Visualize resort locations and snow data on dynamic maps.
+- **User Accounts:** Sign up, sign in, and manage your profile.
+- **Bookmarks:** Save your favorite resorts for quick access.
+- **Feedback & Reviews:** Submit feedback and read reviews from other users.
+
+## Tech Stack
+
+- **Frontend:** React, TypeScript, Vite, CSS Modules
+- **Backend:** Go (Golang), SQL Server
+- **Data Sources:** Open-Meteo, Microsoft Planetary Computer, NOAA
