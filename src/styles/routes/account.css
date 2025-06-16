@@ -1,0 +1,164 @@
+.accountCounter {
+    display: grid;
+    width: 100%;
+    grid-template-areas:
+        "accountBackground"
+        "accountContentContainer"
+        "accountFooter";
+}
+
+.accountBackground{
+    position: relative;
+    grid-area: resortBackground;
+
+    height: 20vw;
+    width: 100%;
+    
+    background-image: url('src/assets/accountbackground3.jpg');
+    background-size: 100%;
+    background-repeat: no-repeat;
+
+    justify-items: center;
+    display: grid;
+    grid-template-rows: 1fr 1fr;
+    grid-template-areas:
+        "accountHeader";
+
+    padding-top: 5vh;
+    margin-bottom: 10vh;
+}
+
+.accountBackground::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 33%;
+    background: linear-gradient(to bottom, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 1) 100%);
+    pointer-events: none; 
+}
+
+.accountContentContainer {
+    grid-area: accountContentContainer;
+    margin-left: 2vh;
+    margin-right: 2vh;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    font-size: 1.5vw;
+    
+    font-family: "Anonymous Pro"," monospace";
+    color: #141414;
+    transition: margin-top 0.5s ease;
+}
+
+.accountHeader {
+    grid-area: accountHeader;
+    margin-top: 2vw;
+
+    font-size: 2vw;
+    font-family: "Anonymous Pro", monospace;
+    color: #141414;
+
+    height: 4vw;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    margin-bottom: 2vw;
+}
+
+.accountPersonal {
+    grid-area: accountPersonal;
+    margin-top: 2vw;
+
+    width: 96vw;
+    font-size: clamp(1rem, 3vw, 2.5rem);
+
+    display: flex;
+    justify-items: center;
+    flex-direction: column;
+    margin-bottom: 2vw;
+
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-areas:
+        "accountInfo"
+        "accountResorts";
+}
+
+.accountResorts {
+    grid-area: accountResorts;
+
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+
+    h2 {
+        justify-self: center;
+    }
+}
+
+.accountInfo {
+    grid-area: accountInfo;
+    width: 96vw;
+    display: flex;
+}
+
+.accountFooter {
+    grid-area: accountFooter;
+    justify-items: center;
+    margin-bottom: 2vw;
+}
+
+.homeRedirect {
+    cursor: pointer;
+    transition: transform 0.3s ease; 
+}
+
+.homeRedirect:hover {
+    transform: scale(1.1); 
+}
+
+@media (prefers-color-scheme: dark) {
+    .accountContainer {
+        background-color: #141414;
+    }
+    
+    .accountHeader {
+        color: #ededeb;
+    }
+
+    .accountResorts {
+        color: #ededeb;
+    }
+
+    .accountInfo {
+        color: #ededeb;
+    }
+
+    .accountBackground {
+        background-image: url('src/assets/accountnightbackground.jpg');
+        background-position: center;
+    }
+
+    .accountBackground::after {
+        background: linear-gradient(to bottom, rgba(20, 20, 20, 0) 0%, rgba(20, 20, 20, 1) 100%);
+
+    }
+
+    .accountFooter {
+        color: #ededeb;
+    }
+
+    .homeRedirect {
+        margin-top: 2vh;
+        border: 1px solid #ededeb;
+    }
+}
+

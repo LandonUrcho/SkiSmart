@@ -1,0 +1,94 @@
+.cardContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    
+    width: 90%;
+    grid-template-areas:
+        "resortName"
+        "resortImg"
+        "resortInfo";
+}
+
+.resortName {
+    grid-area: resortName;
+
+    font-size: 3rem;
+
+    justify-self: center;
+
+    margin-bottom: 2vh;
+    font-family: 'Anonymous Pro';
+}
+
+.resortImg {
+    grid-area: resortImg;
+    padding-bottom: 1rem;
+    width: 100%;
+
+    display: flex;
+    justify-content: center;
+
+    img {
+        width: 100%;
+        max-width: 70vw;
+        height: auto;
+        max-height: 60vh;
+        object-fit: cover;
+    }
+}
+
+.resortInfo {
+    grid-area: resortInfo;
+
+    width: 100%;
+    max-width: 70vw;
+
+    font-size: 1rem;
+
+    padding-block: 1rem;
+    font-family: "Anonymous Pro";
+}
+
+.address {
+    grid-area: address;
+    width: 100%;
+    padding-right: 2vw;
+    display: flex;
+    flex-direction: row-reverse;
+    height: fit-content;
+}
+
+.snowfall {
+    grid-area: snowfall;
+    width: 20vw;
+}
+
+.visitPageButton {
+    grid-area: visitPageButton;
+    height: 60px;
+    width: 15vw;
+
+    background-color: #141414;
+    color:#ededeb;
+
+    transition: transform 0.3s ease; 
+}
+
+.visitPageButton:hover {
+    transform: scale(1.1);
+}
+
+@media (prefers-color-scheme: dark) {
+ 
+    .cardContainer {
+        background-color: #141414;
+    }
+
+    .visitPageButton {
+        border: 2px solid #ededeb;
+        background-color: #141414;
+        color: #ededeb; 
+    }
+
+}

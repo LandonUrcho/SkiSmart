@@ -1,0 +1,314 @@
+.pageContainer {
+    display: grid;
+    grid-template-areas:
+        "pageBackground"
+        "contentContainer";
+}
+
+.pageBackground {
+    position: relative;
+    grid-area: pageBackground;
+
+    height: 35vw;
+    width: 100%;
+    
+    background-image: url('src/assets/HiResMountain.jpg');
+    background-size: 100%;
+    background-repeat: no-repeat;
+
+    justify-items:center;
+
+    display: grid;
+    grid-template-rows: 1fr 1fr;
+    grid-template-areas:
+        "logo"
+        "title";
+    padding-top: 5vh;
+    
+}
+
+.pageBackground::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 33%;
+    background: linear-gradient(to bottom, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 1) 100%);
+    pointer-events: none; 
+}
+
+.logo {
+    grid-area: logo;
+    width: auto;
+    height: 18vw;
+
+}
+
+.title {
+    grid-area: title;
+
+    font-size: 4vw;
+    font-family: "Anonymous Pro", monospace;
+    color: #141414;
+    height: 4vw;
+}
+
+.pageContainer .contentContainer {
+    grid-area: contentContainer;
+    margin-left: 2vh;
+    margin-right: 2vh;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    
+    font-size: 1.3em;
+    font-family: "Anonymous Pro"," monospace";
+    color: #141414;
+
+    display: grid;
+    grid-template-areas:
+        "intro"
+        "mission"
+        "popularResorts"
+        "NOAA"
+        "team"
+        "footer";
+}
+
+.intro {
+    grid-area: intro;
+    margin-top: 2vw;
+
+    font-size: clamp(1rem, 4vw, 2.5rem);
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    margin-bottom: 2vw;
+}
+
+.mission {
+    grid-area: mission;
+    margin-top: 10vh;
+    margin-bottom: 10vh;
+
+    height: auto;
+
+    font-size: 1.4em;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.popularResorts {
+    grid-area: popularResorts;
+    margin-top: 4vw;
+    margin-bottom: 10vw;
+
+    height: 100vh;
+    
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+
+    height: 20%;
+
+    a {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+}
+
+.exploreButtonContainer {
+    justify-self: center;
+    width: 85%;
+    background-image: url("src/assets/exploreButton.png");
+    background-size: cover;
+    cursor: pointer; 
+    transition: transform 0.3s ease; 
+}
+
+.exploreButtonImg {
+    width: 100%; 
+    height: auto; 
+    opacity: 0;
+}
+
+.exploreButtonContainer:hover {
+    transform: scale(1.1); 
+}
+
+.NOAA {
+    grid-area: NOAA;
+    margin-top: 4vw;
+    height: 100vh;
+
+    display: grid; 
+    grid-template-columns: 2fr 1fr; 
+    grid-template-areas: 
+        "NOAAText NOAAImg";
+}
+
+.NOAAText {
+    grid-area: NOAAText;
+
+    font-size: 1.4em;
+
+    margin-right: 2vw;
+}
+
+.NOAAImg {
+    grid-area: NOAAImg;
+
+    margin-top: 20vh;
+
+    width: auto;
+    height: auto;
+
+    border: 2px solid #141414;
+    border-radius: 20px;
+
+    width: 100%;
+}
+
+.team {
+    grid-area: team;
+    margin-top: 4vw;
+    height: 100vh;
+
+    font-size: 2vw;
+    
+    display: grid; 
+    grid-template-columns: 1fr 2fr; 
+    grid-template-areas: 
+        "teamImg teamText";
+}
+
+.teamImg {
+    grid-area: teamImg;
+
+    margin-top: 20vh;
+
+    width: auto;
+    height: auto;
+
+    border: 2px solid #141414;
+    border-radius: 20px;
+
+    width: 100%;
+}
+
+
+.teamText {
+    grid-area: teamText;
+
+    font-size: 1.4em;
+
+    margin-top: 4vw;
+    margin-left: 2vw;
+    background-color: pink;
+}
+
+
+.footer {
+    grid-area: footer;
+    margin-top: 5vh;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    
+}
+
+.signinRedirect {
+    cursor: pointer;
+    transition: transform 0.3s ease; 
+}
+
+.signinRedirect:hover {
+    transform: scale(1.1); 
+}
+
+  
+@media (max-width: 964px) {
+    .NOAA {
+        height: auto;
+        grid-template-columns: 1fr; 
+        grid-template-areas: 
+            "NOAAText"
+            "NOAAImg";
+    }
+
+    .team {
+        height: auto;
+        grid-template-columns: 1fr; 
+        grid-template-areas: 
+            "teamText"
+            "teamImg";
+    }
+}
+
+@media (prefers-color-scheme: dark) {
+ 
+    .pageContainer {
+        background-color: #141414;
+    }
+
+    .pageBackground {
+        background-image: url('src/assets/dark-mode-background.jpg');
+        background-position: center;
+    }
+
+    .title {
+        color: #ededeb;
+    }
+
+    .pageBackground::after {
+        background: linear-gradient(to bottom, rgba(20, 20, 20, 0) 0%, rgba(20, 20, 20, 1) 100%);
+    }
+
+    .intro {
+        color: #ededeb;
+    }
+
+    .mission {
+        color: #ededeb;
+    }
+
+    .popularResorts {
+        color: #ededeb;
+    }
+
+    .exploreButtonContainer {
+        background-image: url("src/assets/exploreButtonDark.png");
+    }
+
+    .footer {
+        color: #ededeb;
+    }
+
+    .teamText {
+        color: #ededeb;
+    }
+
+    .NOAAText {
+        color: #ededeb;
+    }
+
+    .signinRedirect {
+        margin-top: 2vh;
+        border: 1px solid #ededeb;
+    }
+
+}
